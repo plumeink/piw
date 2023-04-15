@@ -1,4 +1,14 @@
 <script setup lang="ts">
+import {useLangStore} from "@/stores/lang";
+import i18n from "@/lang";
+
+const store = useLangStore()
+
+const handleChangeLang = () => {
+    store.modifyLang(store.langValue !== "zh" ? "zh" : "en")
+    i18n.global.locale = store.langValue === "zh" ? "zh" : "en"
+    console.log(i18n)
+}
 defineProps<{
   msg: string
 }>()
@@ -6,6 +16,7 @@ defineProps<{
 
 <template>
   <div class="greetings">
+      <el-button @click="handleChangeLang">{{ $t("tip") }}</el-button>
     <h1 class="green">{{ $t("tip") }}</h1>
     <h3>
       You’ve successfully created a project with
