@@ -5,10 +5,19 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import {useLangStore} from "@/stores/lang";
+import i18n from "@/lang";
+
+const store = useLangStore()
+
+const handleChangeLang = () => {
+    store.modifyLang(store.langValue !== "zh" ? "zh" : "en")
+    i18n.global.locale = store.langValue === "zh" ? "zh" : "en"
+}
 </script>
 
 <template>
-    <el-button>Hello</el-button>
+    <el-button @click="handleChangeLang">Hello</el-button>
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
