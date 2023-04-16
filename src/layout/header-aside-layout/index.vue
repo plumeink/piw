@@ -9,13 +9,17 @@ export default {
 
 <template>
 <el-container>
-    <HeaderContainer />
+    <el-header height="52px">
+        <HeaderContainer />
+    </el-header>
     <el-main>
         <RouterView />
     </el-main>
 </el-container>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+.piw-header {
+    --piw-header-padding: 0 0;
+}
 </style>

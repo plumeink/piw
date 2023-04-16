@@ -18,7 +18,6 @@ const store = useLangStore()
             :locale="store.langValue === 'zh' ? elementZhLocale : elementEnLocale"
             namespace="piw">
         <RouterView/>
-        <el-date-picker/>
     </el-config-provider>
 </template>
 
