@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
 export default {
     name: "HeaderContainer"
 }
+</script>
+
+<script setup lang="ts">
+import {ref} from "vue";
+
+const activeIndex = ref("")
 </script>
 
 <template>
