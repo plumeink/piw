@@ -7,6 +7,7 @@ export default {
 <script setup lang="ts">
 import HeaderContainer from '@/layout/header/index.vue'
 import FooterContainer from '@/layout/footer/index.vue'
+import AsideContainer from '@/layout/aside/index.vue'
 import {RouterView} from "vue-router";
 </script>
 
@@ -15,12 +16,18 @@ import {RouterView} from "vue-router";
     <el-header>
         <HeaderContainer />
     </el-header>
-    <el-main>
-        <RouterView />
-    </el-main>
-    <el-footer>
-        <FooterContainer />
-    </el-footer>
+    <el-aside>
+        <AsideContainer />
+    </el-aside>
+    <el-container>
+        <el-main>
+            <RouterView />
+        </el-main>
+        <el-footer>
+            <FooterContainer />
+        </el-footer>
+    </el-container>
+
 </el-container>
 </template>
 
