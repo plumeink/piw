@@ -12,28 +12,42 @@ import {RouterView} from "vue-router";
 </script>
 
 <template>
-<el-container>
-    <el-header>
-        <HeaderContainer />
-    </el-header>
-    <el-aside>
-        <AsideContainer />
-    </el-aside>
-    <el-container>
-        <el-main>
-            <RouterView />
-        </el-main>
-        <el-footer>
-            <FooterContainer />
-        </el-footer>
+    <el-container class="piw-auto-wh">
+        <el-header>
+            <HeaderContainer/>
+        </el-header>
+        <el-container direction="horizontal" class="piw-auto-h">
+            <el-aside class="piw-auto-h">
+                <AsideContainer class="piw-auto-h"/>
+            </el-aside>
+            <el-container direction="vertical">
+                <el-main>
+                    <RouterView/>
+                </el-main>
+                <el-footer class="piw-footer">
+                    <FooterContainer/>
+                </el-footer>
+            </el-container>
+        </el-container>
     </el-container>
-
-</el-container>
 </template>
 
 <style scoped lang="scss">
 .piw-header {
+  height: 52px;
+  --piw-header-padding: 0 0;
+}
+
+.piw-auto-wh {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.piw-auto-h {
+    height: 100% !important;
+}
+
+.piw-footer {
     height: 52px;
-    --piw-header-padding: 0 0;
 }
 </style>

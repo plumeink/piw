@@ -13,6 +13,7 @@ export default {
 <style scoped lang="scss">
 .piw-footer-box {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;

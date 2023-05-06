@@ -48,7 +48,7 @@ const handleRouterPush = (pathname, path) => {
 
 <template>
     <div>
-        <el-menu>
+        <el-menu style="height: 100%">
             <menuItemRender :menu="menuConfig.main" uri=""/>
         </el-menu>
     </div>
